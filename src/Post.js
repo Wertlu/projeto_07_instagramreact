@@ -8,7 +8,7 @@ export default function Post(props){
         <div class="post">
         <div class="topo">
             <div class="usuario">
-                <img src={`assets/img/${props.usuario}.svg`} />
+                <img src={`assets/img/${props.imgUsuario}`} />
                 {props.usuario}
             </div>
             <div class="acoes">
@@ -17,7 +17,7 @@ export default function Post(props){
         </div>
 
         <div class="conteudo">
-            <img src={`assets/img/${props.conteudo}.svg`} />
+            <img src={`assets/img/${props.conteudo}`} />
         </div>
 
         <div class="fundo">
@@ -31,7 +31,7 @@ export default function Post(props){
             </div>
 
             <div class="curtidas">
-                <img src={`assets/img/${props.curtidor}.svg`} />
+                <img src={`assets/img/${props.imgCurtidor}`} />
                 <div class="texto">
                     Curtido por <strong>{props.curtidor}</strong> e <strong>outras {props.curtidas} pessoas</strong>
                 </div>

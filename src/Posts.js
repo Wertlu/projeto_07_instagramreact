@@ -1,25 +1,53 @@
 import Post from "./Post";
+import PostVideo from "./PostVideo.js"
 export default function Posts() {
     const posts =
         [{
-            usuario: "meowed",
-            conteudo: "gato-telefone",
+            usuario: "Bônus",
+            imgUsuario: "https://picsum.photos/32/32",
+            conteudo: "video",
             curtidor: "respondeai",
-            curtidas: "101.523"
+            imgCurtidor: "respondeai.svg",
+            curtidas: "101.523",
+            categoria: "video"
+        },
+        {
+            usuario: "meowed",
+            imgUsuario: "meowed.svg",
+            conteudo: "gato-telefone.svg",
+            curtidor: "respondeai",
+            imgCurtidor: "respondeai.svg",
+            curtidas: "101.523",
+            categoria: "imagem"
         },
 
         {
             usuario: "barked",
-            conteudo: "dog",
+            imgUsuario: "barked.svg",
+            conteudo: "dog.svg",
             curtidor: "adorable_animals",
-            curtidas: "99.159"
+            imgCurtidor: "adorable_animals.svg",
+            curtidas: "99.159",
+            categoria: "imagem"
         }]
+
 
     return (
         <div class="posts">
-            {posts.map(post => <Post usuario={post.usuario}
+            {posts.filter(post => post.categoria === "video").map(post => <PostVideo
+                usuario={post.usuario}
+                imgUsuario={post.imgUsuario}
                 conteudo={post.conteudo}
                 curtidor={post.curtidor}
+                imgCurtidor={post.imgCurtidor}
+                curtidas={post.curtidas} />)}
+
+            {posts.filter(post => post.categoria === "imagem").map(post => <Post
+                usuario={post.usuario}
+                imgUsuario={post.imgUsuario}
+                conteudo={post.conteudo}
+                curtidor={post.curtidor}
+                imgCurtidor={post.imgCurtidor}
                 curtidas={post.curtidas} />)}
         </div>
     );
